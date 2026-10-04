@@ -5,7 +5,8 @@
     "": {
       "name": "svelte-clean-template",
       "dependencies": {
-        "@fontsource-variable/geist": "^5.3.0",
+        "@fontsource-variable/cinzel": "^5.3.0",
+        "@fontsource-variable/eb-garamond": "^5.3.0",
         "@fontsource-variable/geist-mono": "^5.3.0",
       },
       "devDependencies": {
@@ -211,7 +212,9 @@
 
     "@babel/types": ["@babel/types@7.29.8", "https://registry.npmmirror.com/@babel/types/-/types-7.29.8.tgz", { "dependencies": { "@babel/helper-string-parser": "^7.29.7", "@babel/helper-validator-identifier": "^7.29.7" } }, "sha512-Vj1jF3cPfxg7OAfoI7QnVKLoILlm2JF9pnVHrX8qx7AHMiYWT+NDAA7jChlNgRS4WTLc/fD1lXLmPixluj+3Gg=="],
 
-    "@fontsource-variable/geist": ["@fontsource-variable/geist@5.3.0", "https://registry.npmmirror.com/@fontsource-variable/geist/-/geist-5.3.0.tgz", {}, "sha512-j0m+vLQuG5XAYoHtGCVu0spvlGreR3EzpECUVzkFmI1mTVnAO38l/NEPDCFgZ177JxzYJCLSmTQibIiYPilGrA=="],
+    "@fontsource-variable/cinzel": ["@fontsource-variable/cinzel@5.3.0", "https://registry.npmmirror.com/@fontsource-variable/cinzel/-/cinzel-5.3.0.tgz", {}, "sha512-eFcU0TwaAP5QESF2pV8VoOPJJXJ6sSGm/6mXMwqTdMBPAJMaLhfa6oISHuOtFeddsoHP9RYm4Io0j1j3mNEz2Q=="],
+
+    "@fontsource-variable/eb-garamond": ["@fontsource-variable/eb-garamond@5.3.0", "https://registry.npmmirror.com/@fontsource-variable/eb-garamond/-/eb-garamond-5.3.0.tgz", {}, "sha512-656OJsA9Vv24yhqRZFEzXnzS2AYgKdEILLgHJYLzzXndgcWFKfSXFqzbRI5/6Yk1Yt7UfWrUeppE5nRQPQMwlQ=="],
 
     "@fontsource-variable/geist-mono": ["@fontsource-variable/geist-mono@5.3.0", "https://registry.npmmirror.com/@fontsource-variable/geist-mono/-/geist-mono-5.3.0.tgz", {}, "sha512-vBbuwDEo9AkrqADMXOrlAR3DFcJi4/JxeuU43FoiQERnNwsfXNnvxvReZG02cQKmyk4DZkZdBZX3oTDvy2zBAw=="],
 

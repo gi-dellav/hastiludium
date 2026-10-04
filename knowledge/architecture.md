@@ -4,7 +4,7 @@ Stack: **Svelte 5 (runes) + Vite 8 + TailwindCSS 4 (Vite plugin) + `vite-plugin-
 
 ## 1. Entry & route switch
 
-`index.html` → `src/main.ts` (imports Geist Fontsource fonts + `app.css`, mounts `App` on `#app`) → `src/App.svelte`:
+`index.html` → `src/main.ts` (imports Cinzel/EB Garamond/Geist Mono Fontsource fonts + `app.css`, mounts `App` on `#app`) → `src/App.svelte`:
 
 - `route = $state<Route>({ name: "home" })`; `activePost = $derived(...)` via `getPost(slug)`.
 - `onMount` wires `popstate` (recompute route + scroll to top) and a document-level `click` listener delegating to `handleLinkClick`. Cleanup removes both.

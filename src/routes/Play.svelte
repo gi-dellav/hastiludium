@@ -130,7 +130,7 @@
 <main class="page page-wide">
   {#if !game}
     <p class="eyebrow">Hotseat prototype</p>
-    <h1 class="title">Ingots &amp; Iron</h1>
+    <h1 class="title">Hastiludium</h1>
     <p class="lede">
       Build a loadout in the shop, brawl on a shrinking 12×12 cage, and earn Ingots for finishing
       with few Points. Most total Points after 6 rounds wins.

@@ -1,5 +1,5 @@
 /**
- * Game reducer for *Ingots & Iron*. Every exported action takes a `GameState`,
+ * Game reducer for *Hastiludium*. Every exported action takes a `GameState`,
  * returns a new one, and never touches its input (players are deep-cloned).
  * Deterministic given `rngState`, so `bun test` can drive whole matches.
  */

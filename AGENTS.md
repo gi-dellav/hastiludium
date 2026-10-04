@@ -44,7 +44,7 @@ Bun only. Test runner is `bun test` (`tests/*.test.ts`); CI runs `check` + `test
 | `src/lib/async.ts` | `AsyncState` machine + `fetchJson` + `toErrorMessage` |
 | `src/lib/form.ts` | Pure validators (`required`, `emailField`, `minLength`, `validateAll`) |
 | `src/routes/Post.svelte` | Renders `{@html post.html}` inside `article.prose` |
-| `src/lib/game/*` | *Ingots & Iron* core: `cards`, `rng`, `grid`, `combat`, `flow` (pure reducer), `bots` — no DOM/Svelte |
+| `src/lib/game/*` | *Hastiludium* core: `cards`, `rng`, `grid`, `combat`, `flow` (pure reducer), `bots` — no DOM/Svelte |
 | `src/routes/Play.svelte` | Game screen: setup → shop → cage → gameover (hotseat + bots) |
 | `src/routes/PlayLoader.svelte` | Lazy `import()` wrapper for the game route (`/` and `/play`) |
 | `src/game/*.svelte` | `CageGrid` (emoji DOM grid), `ShopBoard`, `CardView` |

@@ -177,8 +177,10 @@ export interface SeoPluginOptions {
  * are real build artifacts, not an out-of-band `cp`).
  */
 export function seoPlugin(options: SeoPluginOptions): Plugin {
-  const siteName = options.siteName ?? "Svelte Clean Template";
-  const siteDescription = options.siteDescription ?? "A clean static Svelte + Tailwind PWA template.";
+  const siteName = options.siteName ?? "Hastiludium";
+  const siteDescription =
+    options.siteDescription ??
+    "Build a loadout, brawl in the shrinking cage, most Points after 6 rounds wins.";
   const root = normalizeSiteRoot(options.siteRoot);
 
   return {

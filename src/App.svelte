@@ -30,7 +30,7 @@
     };
   });
 
-  const gameTitle = "Ingots & Iron";
+  const gameTitle = "Hastiludium";
   const gameDescription =
     "Build a loadout, brawl on a shrinking 12×12 cage, and earn Ingots for finishing with few Points. Most Points after 6 rounds wins.";
 </script>

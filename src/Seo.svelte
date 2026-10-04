@@ -9,14 +9,14 @@
   }
 
   const {
-    title = "Svelte Clean Template",
-    description = "A clean static Svelte + Tailwind PWA template.",
+    title = "Hastiludium",
+    description = "Build a loadout, brawl on a shrinking 12×12 cage, and earn Ingots for finishing with few Points. Most Points after 6 rounds wins.",
     path,
     noindex = false,
   }: Props = $props();
 
   const fullTitle = $derived(
-    title === "Svelte Clean Template" ? title : `${title} · Svelte Clean Template`,
+    title === "Hastiludium" ? title : `${title} · Hastiludium`,
   );
 </script>
 
@@ -28,7 +28,7 @@
     <meta name="robots" content="noindex" />
   {/if}
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Svelte Clean Template" />
+  <meta property="og:site_name" content="Hastiludium" />
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={withBase(path)} />

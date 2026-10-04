@@ -46,18 +46,23 @@ export default defineConfig(() => {
     base,
     plugins: [
       mdPlugin(),
-      seoPlugin({ siteRoot }),
+      seoPlugin({
+        siteRoot,
+        siteName: "Hastiludium",
+        siteDescription:
+          "Build a loadout, brawl in the shrinking cage, most Points after 6 rounds wins.",
+      }),
       svelte(),
       tailwindcss(),
       VitePWA({
         registerType: "autoUpdate",
         includeAssets: ["favicon.svg", "apple-touch-icon.png"],
         manifest: {
-          name: "Svelte Clean Template",
-          short_name: "Clean",
-          description: "A clean static Svelte + Tailwind PWA template.",
-          theme_color: "#0f172a",
-          background_color: "#0f172a",
+          name: "Hastiludium",
+          short_name: "Hastiludium",
+          description: "Build a loadout, brawl in the shrinking cage, most Points after 6 rounds wins.",
+          theme_color: "#17100a",
+          background_color: "#17100a",
           display: "standalone",
           start_url: base,
           scope: base,

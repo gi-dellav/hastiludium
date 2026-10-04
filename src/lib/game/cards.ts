@@ -1,4 +1,4 @@
-/** Card catalogue for *Ingots & Iron*. Pure data + lookups; no DOM. */
+/** Card catalogue for *Hastiludium*. Pure data + lookups; no DOM. */
 
 export type CardKind = "weapon" | "armor" | "potion" | "upgrade";
 

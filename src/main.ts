@@ -1,6 +1,7 @@
 import { mount } from "svelte";
 import App from "./App.svelte";
-import "@fontsource-variable/geist";
+import "@fontsource-variable/cinzel";
+import "@fontsource-variable/eb-garamond";
 import "@fontsource-variable/geist-mono";
 import "./app.css";
 
