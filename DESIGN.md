@@ -62,6 +62,18 @@ Source of truth is `src/app.css`. This file documents what exists today so agent
 
 **GitHub footer:** `.github-link` + `.github-icon` (mono xs neutral-400 → 900).
 
+**Game UI (`src/game/*`, `src/routes/Play.svelte`):**
+- `.page-wide` — `.page` variant (`max-w-3xl`) that gives the 12×12 cage room.
+- `.setup-list` / `.setup-row` / `.setup-emoji` / `.btn-toggle` — hotseat player setup.
+- `.card-grid` / `.card` / `.card-emoji` / `.card-body` / `.card-name` / `.card-detail` / `.card-note` / `.card-foot` / `.card-price` / `.btn-small` — shop cards.
+- `.loadout-grid` / `.loadout` / `.loadout-active` / `.loadout-name` / `.loadout-list` / `.chip` / `.chip-active` / `.chip-btn` — per-player inventory.
+- `.cage-status` (+ `.cage-status-main` / `.cage-status-meta` / `.hp` / `.shield`) and `.cage-controls` — turn HUD and action buttons.
+- `.cage-grid` / `.tile` / `.tile-wall` / `.tile-pillar` / `.tile-hazard` / `.tile-reachable` / `.tile-target` / `.tile-active` / `.tile-actor` / `.tile-badge` — DOM emoji grid (no canvas): reachable = emerald, target = red ring, active actor = neutral ring.
+- `.roster` (+ `.roster-row` / `.roster-dead` / `.roster-name` / `.roster-stats`) and `.log` — standings and running log.
+
+The game deliberately stays emoji-on-DOM: tiles are `<button>`s in a CSS grid, so keyboard focus and screen readers work without a 2D library.
+
+
 ## 5. Markdown rendering
 
 - Post body renders via `{@html post.html}` inside `<article class="prose max-w-none pt-8">` (`src/routes/Post.svelte`).

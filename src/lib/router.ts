@@ -1,4 +1,8 @@
-export type Route = { name: "home" } | { name: "post"; slug: string } | { name: "not-found"; path: string };
+export type Route =
+  | { name: "home" }
+  | { name: "play" }
+  | { name: "post"; slug: string }
+  | { name: "not-found"; path: string };
 
 function basePath(): string {
   const base = import.meta.env.BASE_URL;
@@ -32,6 +36,7 @@ export function withBase(path: string, base: string = import.meta.env.BASE_URL):
 export function parseRoute(pathname: string, base?: string): Route {
   const path = base === undefined ? pathWithoutBase(pathname) : pathWithoutBase(pathname, base);
   if (path === "/") return { name: "home" };
+  if (path === "/play" || path === "/play/") return { name: "play" };
   const post = path.match(/^\/post\/([^/]+)\/?$/);
   if (post?.[1]) return { name: "post", slug: decodeURIComponent(post[1]) };
   return { name: "not-found", path };

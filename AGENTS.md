@@ -7,7 +7,7 @@ Guidance for AI coding agents working in this repo. Humans: see `README.md` for 
 A clean static webapp template: **Svelte 5 (runes) + Vite 8 + TailwindCSS 4 + PWA**, managed with **Bun**. No SvelteKit, no external router. It builds to a fully static `dist/` and deploys to GitHub Pages via Actions.
 
 - Entry: `index.html` → `src/main.ts` → `src/App.svelte`
-- Routing: hand-rolled history-API SPA in `src/lib/router.ts` (`home | post <slug> | not-found`)
+- Routing: hand-rolled history-API SPA in `src/lib/router.ts` (`home | play | post <slug> | not-found`)
 - Content: build-time `.md → HTML` via `plugins/md.ts`, listed in `src/lib/posts.ts`, rendered in `src/routes/Post.svelte`
 - Styling: design tokens + component classes in `src/app.css` (see `DESIGN.md`)
 - PWA: manifest + service worker in `vite.config.ts`, update UI in `src/PwaUpdate.svelte`
@@ -36,7 +36,7 @@ Bun only. Test runner is `bun test` (`tests/*.test.ts`); CI runs `check` + `test
 |---|---|
 | `index.html` | Vite entry, mounts `#app`, PWA icon links, `theme-color` |
 | `src/main.ts` | Imports Geist fonts + `app.css`, mounts `App` |
-| `src/App.svelte` | Root route switch; demo landing page (counter, posts list, deploy guide) |
+| `src/App.svelte` | Root route switch; home = the game (`/` and `/play` both render `PlayLoader`) |
 | `src/lib/router.ts` | `Route`, `withBase`, `pathWithoutBase`, `navigate`, `currentRoute`, `handleLinkClick`, `parseQuery`, `parseHash` |
 | `src/lib/posts.ts` | `import.meta.glob` over `src/content/*.md`, draft filter, date-desc sort |
 | `src/lib/storage.ts` | Never-throw `localStorage` helpers (`StorageLike`, `memoryStorage`, `readStored`, …) |
@@ -44,6 +44,10 @@ Bun only. Test runner is `bun test` (`tests/*.test.ts`); CI runs `check` + `test
 | `src/lib/async.ts` | `AsyncState` machine + `fetchJson` + `toErrorMessage` |
 | `src/lib/form.ts` | Pure validators (`required`, `emailField`, `minLength`, `validateAll`) |
 | `src/routes/Post.svelte` | Renders `{@html post.html}` inside `article.prose` |
+| `src/lib/game/*` | *Ingots & Iron* core: `cards`, `rng`, `grid`, `combat`, `flow` (pure reducer), `bots` — no DOM/Svelte |
+| `src/routes/Play.svelte` | Game screen: setup → shop → cage → gameover (hotseat + bots) |
+| `src/routes/PlayLoader.svelte` | Lazy `import()` wrapper for the game route (`/` and `/play`) |
+| `src/game/*.svelte` | `CageGrid` (emoji DOM grid), `ShopBoard`, `CardView` |
 | `src/content/*.md` | Markdown posts with frontmatter |
 | `plugins/md.ts` | Vite plugin: frontmatter + GFM render + heading ids + asset rewrite + `404.html` |
 | `plugins/seo.ts` | Build-time SEO: head injection (canonical/`og:url`/RSS) + `sitemap.xml`/`rss.xml`/`robots.txt` |

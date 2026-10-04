@@ -8,17 +8,17 @@ Stack: **Svelte 5 (runes) + Vite 8 + TailwindCSS 4 (Vite plugin) + `vite-plugin-
 
 - `route = $state<Route>({ name: "home" })`; `activePost = $derived(...)` via `getPost(slug)`.
 - `onMount` wires `popstate` (recompute route + scroll to top) and a document-level `click` listener delegating to `handleLinkClick`. Cleanup removes both.
-- Three states: `home` (demo landing), `post` (renders `src/routes/Post.svelte` or an inline 404 block), `not-found` (shows `route.path`).
+- Four states: `home` (the game, via lazy `src/routes/PlayLoader.svelte` → `Play.svelte`), `play` (same game; `/play` is a working alias), `post` (renders `src/routes/Post.svelte` or an inline 404 block), `not-found` (shows `route.path`).
 - Every state mounts `<Seo/>` (per-route `<title>`/description/canonical/OG via `<svelte:head>`, `noindex` on 404s).
 - `<PwaUpdate/>` is always mounted (toast UI for SW updates; `onDestroy` clears the auto-dismiss timer).
 
 ## 2. Router (`src/lib/router.ts`)
 
-`Route = { home } | { post, slug } | { not-found, path }`.
+`Route = { home } | { play } | { post, slug } | { not-found, path }`.
 
 - `basePath()` reads `import.meta.env.BASE_URL` (trailing slash stripped).
 - `pathWithoutBase(pathname)` strips the Pages sub-path (`/<repo>`) so matching always runs on `/…`.
-- `parseRoute` matches `/` → home, `/post/<slug>` (trailing slash tolerated, `decodeURIComponent` on slug) → post, else not-found. Query/hash are ignored by matching; parse them per-route with `currentQuery()` / `currentHash()` (pure cores `parseQuery` / `parseHash`, see `frontend-patterns.md` §6).
+- `parseRoute` matches `/` → home, `/play` → play (lazy `PlayLoader`), `/post/<slug>` (trailing slash tolerated, `decodeURIComponent` on slug) → post, else not-found. Query/hash are ignored by matching; parse them per-route with `currentQuery()` / `currentHash()` (pure cores `parseQuery` / `parseHash`, see `frontend-patterns.md` §6).
 - `withBase(path)` prefixes `BASE_URL` for every internal `href`. `navigate(path)` pushes `withBase`d URL and dispatches `popstate`.
 - `handleLinkClick(event)` keeps navigation client-side: ignores non-left-click, modifier keys, `target="_blank"`, `download`, `rel="external"`, `#`/`mailto:`/absolute-scheme hrefs, and cross-origin URLs. Same-path navigations only scroll to `url.hash` if present. Everything else is intercepted, `preventDefault`ed, and pushed via history API.
 

@@ -67,6 +67,12 @@ describe("parseRoute", () => {
     expect(parseRoute("/", "/")).toEqual({ name: "home" });
   });
 
+  it("matches the play route with a trailing slash", () => {
+    expect(parseRoute("/play", "/")).toEqual({ name: "play" });
+    expect(parseRoute("/play/", "/")).toEqual({ name: "play" });
+    expect(parseRoute("/repo/play", "/repo")).toEqual({ name: "play" });
+  });
+
   it("matches posts with trailing slash and encoded slugs", () => {
     expect(parseRoute("/post/hello", "/")).toEqual({ name: "post", slug: "hello" });
     expect(parseRoute("/post/hello/", "/")).toEqual({ name: "post", slug: "hello" });

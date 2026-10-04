@@ -163,4 +163,221 @@ body {
   .toast-btn-quiet {
     @apply shrink-0 rounded-full px-3 py-1.5 text-[13px] font-medium text-neutral-400 transition hover:text-neutral-900;
   }
+
+  /* --- Ingots & Iron game UI ------------------------------------------- */
+
+  .page-wide {
+    @apply max-w-3xl;
+  }
+
+  .setup-list {
+    @apply mt-4 flex max-w-md flex-col gap-2;
+  }
+
+  .setup-row {
+    @apply flex items-center gap-2;
+  }
+
+  .setup-emoji {
+    @apply w-7 text-center text-lg;
+  }
+
+  .btn-toggle {
+    @apply shrink-0 rounded-full border border-neutral-200 px-3 py-1.5 font-mono text-xs text-neutral-600 transition hover:border-neutral-400 hover:text-neutral-900;
+  }
+
+  .card-grid {
+    @apply mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2;
+  }
+
+  .card {
+    @apply flex items-start gap-3 rounded-2xl border border-neutral-200 bg-white p-3;
+  }
+
+  .card-emoji {
+    @apply flex size-10 shrink-0 items-center justify-center rounded-xl bg-neutral-100 text-xl;
+  }
+
+  .card-body {
+    @apply min-w-0 flex-1;
+  }
+
+  .card-name {
+    @apply text-sm font-medium text-neutral-900;
+  }
+
+  .card-detail {
+    @apply mt-0.5 font-mono text-[11px] tracking-wide text-neutral-500;
+  }
+
+  .card-note {
+    @apply mt-1 text-[12px] leading-5 text-neutral-400;
+  }
+
+  .card-foot {
+    @apply flex shrink-0 flex-col items-end justify-between gap-2 self-stretch;
+  }
+
+  .card-price {
+    @apply font-mono text-xs text-neutral-500;
+  }
+
+  .btn-small {
+    @apply rounded-full border border-neutral-900 bg-neutral-900 px-3 py-1 text-[12px] font-medium text-white transition hover:bg-neutral-700 disabled:cursor-not-allowed disabled:border-neutral-200 disabled:bg-neutral-100 disabled:text-neutral-400;
+  }
+
+  .loadout-grid {
+    @apply mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2;
+  }
+
+  .loadout {
+    @apply rounded-2xl border border-neutral-200 p-4;
+  }
+
+  .loadout-active {
+    @apply border-neutral-900;
+  }
+
+  .loadout-name {
+    @apply flex items-center gap-2 text-sm font-medium text-neutral-900;
+  }
+
+  .loadout-actions {
+    @apply mt-2;
+  }
+
+  .loadout-list {
+    @apply mt-3 flex flex-col gap-1 text-[13px];
+  }
+
+  .loadout-list dt {
+    @apply mt-1 font-mono text-[10px] tracking-widest text-neutral-400 uppercase;
+  }
+
+  .loadout-list dd {
+    @apply flex flex-wrap items-center gap-1.5;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-neutral-50 px-2 py-0.5 text-[12px] text-neutral-700;
+  }
+
+  .chip-active {
+    @apply border-neutral-900 bg-neutral-900 text-white;
+  }
+
+  .chip-btn {
+    @apply rounded-full px-1 text-[10px] text-neutral-500 underline decoration-neutral-300 underline-offset-2 hover:text-neutral-900;
+  }
+
+  .chip-active .chip-btn {
+    @apply text-neutral-300 hover:text-white;
+  }
+
+  .cage-status {
+    @apply mt-5 flex flex-col gap-2 rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-3;
+  }
+
+  .cage-status-main {
+    @apply flex flex-wrap items-center gap-3 text-lg;
+  }
+
+  .cage-status-meta {
+    @apply flex flex-wrap items-center gap-2 font-mono text-[11px] tracking-wide text-neutral-500;
+  }
+
+  .shield {
+    @apply text-sm text-sky-700;
+  }
+
+  .cage-grid {
+    @apply mx-auto mt-5 grid w-full gap-1;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    max-width: min(100%, 42rem);
+  }
+
+  .tile {
+    @apply relative flex aspect-square items-center justify-center rounded-md border border-neutral-200 bg-white leading-none transition select-none;
+    font-size: clamp(0.6rem, 2.2vw, 1.25rem);
+  }
+
+  .tile:disabled {
+    @apply cursor-default opacity-100;
+  }
+
+  .tile-wall {
+    @apply border-neutral-300 bg-neutral-300;
+  }
+
+  .tile-pillar {
+    @apply border-neutral-300 bg-neutral-200;
+  }
+
+  .tile-hazard {
+    @apply bg-red-100;
+  }
+
+  .tile-reachable {
+    @apply cursor-pointer border-emerald-300 bg-emerald-50;
+  }
+
+  .tile-reachable:hover {
+    @apply bg-emerald-100;
+  }
+
+  .tile-target {
+    @apply cursor-pointer border-red-400 bg-red-50 ring-2 ring-red-400;
+  }
+
+  .tile-active {
+    @apply ring-2 ring-neutral-900;
+  }
+
+  .tile-actor {
+    @apply text-[1.5em];
+  }
+
+  .tile-badge {
+    @apply absolute -top-1 -right-1 text-[0.6em];
+  }
+
+  .tile-meta {
+    @apply pointer-events-none absolute inset-x-0 bottom-0 flex justify-center gap-1 font-mono text-[0.42em] leading-none text-neutral-600;
+  }
+
+  .tile-pts {
+    @apply text-amber-700;
+  }
+
+  .cage-controls {
+    @apply mt-5 flex flex-wrap items-center gap-2;
+  }
+
+  .roster {
+    @apply mt-4 flex flex-col gap-2;
+  }
+
+  .roster-row {
+    @apply flex items-center justify-between gap-4 border-b border-neutral-100 pb-2 text-sm;
+  }
+
+  .roster-dead {
+    @apply text-neutral-400 line-through decoration-neutral-300;
+  }
+
+  .roster-name {
+    @apply font-medium text-neutral-900;
+  }
+
+  .roster-stats {
+    @apply font-mono text-[11px] text-neutral-500;
+  }
+
+  .log {
+    @apply mt-4 flex flex-col gap-1 font-mono text-[12px] leading-6 text-neutral-500;
+  }
+
+  .log li {
+    @apply border-b border-neutral-100 pb-1;
+  }
 }
